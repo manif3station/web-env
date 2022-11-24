@@ -8,9 +8,9 @@ use MVU::Env;
 
 my ( $cmd, $val ) = @_;
 
-if ( UNIVERSAL::can( 'MVU::Env', $cmd ) ) {
-    print MVU::Env->$cmd($val);
-}
-else {
-    print MVU::Env->env;
-}
+$cmd //= 'env';
+
+my $code = UNIVERSAL::can( 'MVU::Env', $cmd )
+    or die "Unknow command '$cmd'";
+
+print MVU::Env->$cmd($val);
