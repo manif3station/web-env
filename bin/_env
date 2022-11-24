@@ -1,0 +1,16 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use FindBin '$Bin';
+use lib "$Bin/../src/plugins/web-env/src/lib";
+use MVU::Env;
+
+my ( $cmd, $val ) = @_;
+
+if ( UNIVERSAL::can( 'MVU::Env', $cmd ) ) {
+    print MVU::Env->$cmd($val);
+}
+else {
+    print MVU::Env->env;
+}
