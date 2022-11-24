@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  web:
+    environment:
+      DANCER_ENVIRONMENT: ${DANCER_ENVIRONMENT}
+      PLACK_ENV: ${PLACK_ENV}
