@@ -6,7 +6,7 @@ use FindBin '$Bin';
 use lib "$Bin/../src/plugins/web-env/src/lib";
 use MVU::Env;
 
-my ( $cmd, $val ) = @_;
+my ( $cmd, $val ) = @ARGV;
 
 $cmd //= 'env';
 
